@@ -1,3 +1,11 @@
+/*
+Problem Statement_
+
+How many  users can be supported for 0.5% blocking probability for the following number of trunked channel in blocked calls cleaned system? 
+    (a)1, (b)5, (c) 10, (d)20 (e)100 . 
+Assume each user generates 0.1 Erlamgs of Traffic.
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;
