@@ -1,68 +1,53 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define lli long long int
- 
+
+
+void cluster_size(double n, double SNRgiven, double N)
+{
+    double I = 6;
+    double Q = sqrt(3*N);  // Q = D/R
+    double SNRdb = 10*log10((pow(Q,n))/I);  // S(I) = ((D/R)^n)/I
+    cout<<"For n =" <<n<<endl;
+    
+    if(SNRgiven <= SNRdb)
+    {
+        cout<<"N= "<<N<<"can be used. "<<endl;
+        cout<<"output SNRdb for N = "<<N<<" is : " << SNRdb<<endl;
+    }
+    
+    else
+    {
+        cout<<"N= "<<N<<"can not be used. "<<endl;
+        cout<<"output SNRdb for N = "<<N<<" is : " << SNRdb<<endl;
+    }
+    
+    cout<<endl;
+    
+}
+
 int main(){
-    double N[] = {7,12,19};
-    double cochannel_cells = 6;
-    cout<<"i) For n = 4: \n";
     
-    for(lli i=0;i<3;i++){
-        cout<<"Let's consider "<<N[i]<<" cell reuse pattern";
-        double Q = sqrt(3*N[i]);
-        bool f=0;
-        cout<<"\nQ = "<<Q<<endl;
-        cout<<"Signal-to-Interference Ratio: "<<10*log10((Q*Q*Q*Q)/cochannel_cells)<<endl;
-        if(10*log10((Q*Q*Q*Q)/cochannel_cells)>=15){
-            cout<<"N = "<<N[i]<<" can be used\n";
-            f=1;
-        }
-        if(f) break;
-        else{
-            cout<<"N = "<<N[i]<<" can not be used\n";
-        }
-    }
-    
-    
-    
-    cout<<"\n\nii) For n = 3: \n";
-    
-    for(lli i=0;i<3;i++){
-        cout<<"Let's consider "<<N[i]<<" cell reuse pattern";
-        double Q = sqrt(3*N[i]);
-        bool f=0;
-        cout<<"\nQ = "<<Q<<endl;
-        cout<<"Signal-to-Interference Ratio: "<<10*log10((Q*Q*Q)/cochannel_cells)<<endl;
-        if(10*log10((Q*Q*Q)/cochannel_cells)>=15){
-            cout<<"N = "<<N[i]<<" can be used\n";
-            f=1;
-        }
-        if(f) break;
-        else{
-            cout<<"N = "<<N[i]<<" can not be used\n";
-        }
-    }
-    
+    cluster_size(4, 15, 7);
+    cluster_size(3, 15, 7);
+    cluster_size(3, 15, 12);
     
 }
 
 
+
 /* 
-i) For n = 4: 
-Let's consider 7 cell reuse pattern
-Q = 4.58258
-Signal-to-Interference Ratio: 18.6629
-N = 7 can be used
+For n =4
+N= 7can be used. 
+output SNRdb for N = 7 is : 18.6629
+
+For n =3
+N= 7can not be used. 
+output SNRdb for N = 7 is : 12.0518
+
+For n =3
+N= 12can be used. 
+output SNRdb for N = 12 is : 15.563
 
 
-ii) For n = 3: 
-Let's consider 7 cell reuse pattern
-Q = 4.58258
-Signal-to-Interference Ratio: 12.0518
-N = 7 can not be used
-Let's consider 12 cell reuse pattern
-Q = 6
-Signal-to-Interference Ratio: 15.563
-N = 12 can be used
 
 */
