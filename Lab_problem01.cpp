@@ -4,36 +4,33 @@ A Specturm of 30MHz is allocated to a Wireless FDD cellular System which uses tw
 
 
 */
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define lli long long int
+
+int total_BW = 30*1000000;
+int controll_BW = 1*1000000;
+int f_per_channel = 25*1000*2;
+
+int total_channel = (total_BW / f_per_channel);
+int total_controll = (controll_BW / f_per_channel);
+int total_voice = (total_channel-total_controll);
+
+void channel_distribution(double N){
  
-int main(){
-    lli BW=30000, CBW=25*2;
-    lli available_channel = BW/CBW;
-    lli ctrl_spectrum = 1000;
-    lli available_ctrl_channel = ctrl_spectrum/CBW;
-    // cout<<available_ctrl_channel<<endl;
-    lli n1=4,n2=7,n3=12;
-    
-    cout<<"i) For N = "<<n1<<":\n";
-    cout<<"Total number of channels available: "<<available_channel/n1<<endl;
-    cout<<"Voice channel per cell: "<<(available_channel- available_ctrl_channel)/n1<<endl;
-    cout<<"Control channel per cell: "<<(available_channel/n1)-((available_channel- available_ctrl_channel)/n1)<<endl;
-    
-    
-    cout<<"\nii) For N = "<<n2<<":\n";
-    cout<<"Total number of channels available: "<<available_channel/n2<<endl;
-    cout<<"Voice channel per cell: "<<(available_channel- available_ctrl_channel)/n2<<endl;
-    cout<<"Control channel per cell: "<<(available_channel/n2)-((available_channel- available_ctrl_channel)/n2)<<endl;
-    
-    cout<<"\niii) For N = "<<n3<<":\n";
-    cout<<"Total number of channels available: "<<available_channel/n3<<endl;
-    cout<<"Voice channel per cell: "<<(available_channel- available_ctrl_channel)/n3<<endl;
-    cout<<"Control channel per cell: "<<(available_channel/n3)-((available_channel- available_ctrl_channel)/n3)<<endl;
-    
+    cout<<"For "<<N<<" cell reuse:"<<endl;
+    cout<<"Total number of channel per cell is : "<<round(total_channel/N)<<endl;
+ 
+    double voice_per_cell = total_voice / N;
+    double controll_per_cell = total_controll / N;
+ 
+    cout<<"Total Voice channel per cell is : "<<round(voice_per_cell)<<endl;
+    cout<<"Total control channel per cell is : "<<round(controll_per_cell)<<endl<<endl;
 }
-//Write to Rifat Shadman
 
+int main()
 
+{
+    channel_distribution(4);
+    channel_distribution(7);
+    channel_distribution(12);
+}
