@@ -1,0 +1,27 @@
+﻿In radio communication, a control channel is a central channel that controls other constituent radios by handling data streams. It is most often used in the context of a trunked radio system, where the control channel sends various data which coordinates users in talkgroups.
+
+
+ A transmission channel or subchannel that has the bandwidth necessary to carry human voice.
+
+
+Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space. Path loss is a major component in the analysis and design of the link budget of a telecommunication system. This term is commonly used in wireless communications and signal propagation.
+
+
+ Clusters often contain seven cells, but other configurations are possible. The larger the number of cells in the cluster, the greater the distance needed between cells sharing the same frequencies.
+The factor N is called the cluster size and is typically equal to 4, 7, or 12. If the cluster size N is reduced while the cell size is kept constant, more clusters are required to cover a given area, and hence more capacity (a larger value of C) is achieved.
+
+
+Blocking probability is the chance that a customer will be denied service due to lack of resources. A blocking probability of 0.01 means 1% of customers will be denied service.
+
+
+The Fraunhofer distance, named after Joseph von Fraunhofer, is the value of: is the wavelength of the radio wave. This distance provides the limit between the near and far field.
+
+
+d = 2D^2/lamda 
+where D is the largest dimension of the radiator (in the case of a magnetic loop antenna, the diameter) and {\lambda } is the wavelength of the radio wave.
+
+
+Frequency deviation is used in FM radio to describe the difference between the minimum or maximum extent of a frequency modulated signal, and the nominal center or carrier frequency.
+
+
+Frequency deviation in FM is defined as the way to describe the difference between the minimum and maximum extent of a frequency modulated signal and the carrier frequency.
